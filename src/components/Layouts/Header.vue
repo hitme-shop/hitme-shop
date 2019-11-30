@@ -7,6 +7,7 @@
     </div>
     <div class="app-info float-left ml-4 pt-2">
       <h3 class="app-name">Hitme Shop</h3>
+      <h1>Search</h1>
     </div>
     <div class="account float-right fa-lg pt-3 mr-4">
       <i class="fal fa-user"></i>
