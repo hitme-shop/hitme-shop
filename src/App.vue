@@ -4,6 +4,7 @@
     <div class="custom-grid">
       <custom-sidebar />
       <router-view />
+      <router-link to="/search">Search</router-link>
     </div>
   </div>
 </template>
@@ -11,12 +12,14 @@
 /** Components */
 import Sidebar from "@/components/Layouts/Sidebar";
 import Header from "@/components/Layouts/Header";
+// import Search  from "@/views/Search";
 
 export default {
   name: "app",
   components: {
     "custom-sidebar": Sidebar,
-    "custom-header": Header
+    "custom-header": Header,
+    // "custom-search": Search
   },
   created() {
     this.$store.dispatch("init");

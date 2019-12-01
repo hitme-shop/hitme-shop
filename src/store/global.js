@@ -1,8 +1,9 @@
 
 const actions = {
-   init: ({ dispatch }) => {
+   init: ({ dispatch ,state}) => {
       dispatch("Categories/fetchCategories")
       dispatch("Sliders/fetchSliders")
+      console.log(state)
    }
 }
 
