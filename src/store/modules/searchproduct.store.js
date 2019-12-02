@@ -10,24 +10,12 @@ const state = {
     searchTitle:''
     
 }
-
-
-
-
 const mutations = {
     findProducts: (state,product)=>{state.product=product},
     setTitle:(state,setProduct)=>{state.searchTitle=setProduct},   
-
-
     }
-    
-    
-    
-
-
 const getters={
-    allProducts: state=>state.product,
-    
+    allProducts: state=>state.product,    
 }
 const actions ={     
     
