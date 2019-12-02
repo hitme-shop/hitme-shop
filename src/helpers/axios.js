@@ -11,4 +11,4 @@ const PRODUCTION_API = axios.create({
 })
 
 
-export default DEV_API
+export default PRODUCTION_API
