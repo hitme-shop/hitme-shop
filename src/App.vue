@@ -11,6 +11,7 @@
 /** Components */
 import Sidebar from "@/components/Layouts/Sidebar";
 import Header from "@/components/Layouts/Header";
+import { mapActions } from 'vuex';
 
 export default {
   name: "app",

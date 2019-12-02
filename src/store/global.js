@@ -3,6 +3,7 @@ const actions = {
    init: ({ dispatch }) => {
       dispatch("Categories/fetchCategories")
       dispatch("Sliders/fetchSliders")
+      dispatch("Products/fetchProducts")
    }
 }
 
