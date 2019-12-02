@@ -18,10 +18,7 @@ export default {
     //value: state=>state.name,
     ...mapGetters(["allProducts"])
   },
-  created() {
-    this.$store.dispatch("fetchData")
-    
-  },
+
 
 };
 </script>

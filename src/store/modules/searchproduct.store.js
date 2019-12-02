@@ -1,20 +1,13 @@
 //import api from "../../helpers/axios"
 import axios from "axios"
+import { stat } from "fs"
+import router from "@/router"
 
-const actions ={
-    async fetchData({commit},searchItem){
-        const response = await axios.get(`https://hitme-shop-api.herokuapp.com/v1/search/${searchItem}`)
-        commit('findProducts',response.data)
-        // console.log(response.data)
-        console.log(`${searchItem}`)
-        
-    }
-}
+
 
 const state = {
     product:[],
-    title:""
-
+    searchTitle:''
     
 }
 
@@ -23,6 +16,9 @@ const state = {
 
 const mutations = {
     findProducts: (state,product)=>{state.product=product},
+    setTitle:(state,setProduct)=>{state.searchTitle=setProduct},   
+
+
     }
     
     
@@ -33,6 +29,22 @@ const getters={
     allProducts: state=>state.product,
     
 }
+const actions ={     
+    
+    async fetchData({commit},title){
+        router.push("/search")
+        const response = await axios.get(`https://hitme-shop-api.herokuapp.com/v1/search/${title}`  )
+        commit('findProducts',response.data)
+        // console.log(response.data)
+        console.log(response.data)   
+        
+    },
+    async fetchSuggestionData({commit},title){
+        const res = await axios.get(`https://hitme-shop-api.herokuapp.com/v1/search/suggestions/${title}`)
+        commit('findProducts',res.data)
+        console.log(res.data)   
+    }        
+    }
 
 export default {
     //namespaced:true,
