@@ -12,7 +12,7 @@ const mutations = {
    },
    resetState: (state) => {
       let newState = initialState()
-      Object.keys(newState).forEach(key => newState[key] = state[key])
+      Object.keys(newState).forEach(key => state[key] = newState[key])
    }
 }
 
