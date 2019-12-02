@@ -19,7 +19,7 @@ export default {
   components: {
     "custom-sidebar": Sidebar,
     "custom-header": Header,
-    // "custom-search": Search
+    //"custom-search": Search
   },
   created() {
     this.$store.dispatch("init");
