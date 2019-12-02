@@ -3,7 +3,7 @@ const actions = {
    init: ({ dispatch ,state}) => {
       dispatch("Categories/fetchCategories")
       dispatch("Sliders/fetchSliders")
-      console.log(state)
+      dispatch("Products/fetchProducts")
    }
 }
 
@@ -13,7 +13,7 @@ const mutations = {
    },
    resetState: (state) => {
       let newState = initialState()
-      Object.keys(newState).forEach(key => newState[key] = state[key])
+      Object.keys(newState).forEach(key => state[key] = newState[key])
    }
 }
 

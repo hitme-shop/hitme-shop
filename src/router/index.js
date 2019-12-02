@@ -24,6 +24,11 @@ const routes = [
     path: '/compare',
     name: 'compare',
     component: () => import('../views/Compare.vue')
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import('../views/Test.vue')
   }
 ]
 
