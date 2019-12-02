@@ -9,8 +9,8 @@
       <h3 class="app-name">Hitme Shop</h3>
      </div> 
        
-       <form @submit="onSubmit" class=" search form-inline md-form mr-auto mb-4">
-        <input class="form-control mr-sm-2" v-model="title" type="text" placeholder="Search" aria-label="Search">
+       <form  class=" search form-inline md-form mr-auto mb-4">
+        <input class="form-control mr-sm-2" :value="title" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-elegant btn-rounded btn-sm my-0 " type="submit">Search</button>          
         </form>
        
@@ -31,7 +31,7 @@ export default {
   name: "custom-header",
   data(){
     return{
-      title:''
+       title:''
     }
   },
   components: {
@@ -42,18 +42,18 @@ export default {
     ...mapGetters(["sidebar"])
   },
   methods: {
-    ...mapMutations(["setState",]),
-    ...mapActions(['searchItem']),
+    ...mapMutations(["setState"]),
+    
+    
     toggleSidebar() {
       this.sidebar === "collapsed"
         ? this.setState({ sidebar: "expanded" })
         : this.setState({ sidebar: "collapsed" });
     },
-    onSubmit(e){
-      e.preventDefault();
-      this.searchItem(this.title)
-      
-    }
+   
+
+    
+   
   }
 };
 </script>

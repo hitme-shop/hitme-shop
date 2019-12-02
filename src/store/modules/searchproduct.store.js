@@ -2,10 +2,10 @@
 import axios from "axios"
 
 const actions ={
-    async fetchData({commit,searchItem}){
+    async fetchData({commit},searchItem){
         const response = await axios.get(`https://hitme-shop-api.herokuapp.com/v1/search/${searchItem}`)
         commit('findProducts',response.data)
-        console.log(response.data)
+        // console.log(response.data)
         console.log(`${searchItem}`)
         
     }
@@ -13,7 +13,8 @@ const actions ={
 
 const state = {
     product:[],
-    name:"Turag"
+    title:""
+
     
 }
 
@@ -21,12 +22,16 @@ const state = {
 
 
 const mutations = {
-    findProducts: (state,product)=>{state.product=product}
-}
+    findProducts: (state,product)=>{state.product=product},
+    }
+    
+    
+    
+
+
 const getters={
     allProducts: state=>state.product,
-    name: state=> state.name
-
+    
 }
 
 export default {
