@@ -1,30 +1,26 @@
 <template>
   <div class="sliders-container p-2">
-    <image-slider :sliders="daraz" />
-    <div>
-      <image-slider :sliders="pickaboo" />
-      <image-slider :sliders="ajkerdeal" />
-    </div>
+    <custom-image-slider :sliders="daraz" />
   </div>
 </template>
 
 <script>
 /** Components */
-import ImageSlider from "@/components/Sliders/ImageSlider";
+//import ImageSlider from "@/components/Sliders/ImageSlider";
+import CustomImageSlider from "@/components/Sliders/CustomSlider";
 
 import { mapGetters } from "vuex";
 export default {
   name: "sliders-container",
-  components: { "image-slider": ImageSlider },
+  components: {
+    //"image-slider": ImageSlider,
+    "custom-image-slider": CustomImageSlider
+  },
   computed: {
-    ...mapGetters("Sliders", ["daraz", "pickaboo", "ajkerdeal"])
+    ...mapGetters("Sliders", ["daraz", "darazSliders", "pickaboo", "ajkerdeal"])
   }
 };
 </script>
 
 <style lang="scss">
-.sliders-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
 </style>

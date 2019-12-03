@@ -14,7 +14,7 @@ export default {
   name: "home",
   components: {
     "sliders-container": SlidersContainer,
-    RandomProducts
+    RandomProducts,
   }
 };
 </script>

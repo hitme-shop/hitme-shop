@@ -55,7 +55,6 @@ $light-white: #fafafa;
   color: #212121;
   .inner {
     background-color: white;
-    //border: 1px solid rgba(0, 0, 0, 0.137);
     .destination {
       text-decoration: none;
       color: #212121;
@@ -88,7 +87,7 @@ $light-white: #fafafa;
     }
     .card-info {
       .title {
-        max-height: 3rem;
+        height: 3rem;
         overflow: hidden;
       }
       .current-price {
