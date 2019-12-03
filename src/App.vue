@@ -4,7 +4,7 @@
     <div class="custom-grid">
       <custom-sidebar />
       <router-view />
-      <router-link to="/search">Search</router-link>
+      <!-- <router-link to="/search">Search</router-link> -->
     </div>
   </div>
 </template>
@@ -20,6 +20,8 @@ export default {
     "custom-sidebar": Sidebar,
     "custom-header": Header,
     //"custom-search": Search
+  },computed:{
+
   },
   created() {
     this.$store.dispatch("init");

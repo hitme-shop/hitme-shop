@@ -88,7 +88,7 @@ $light-white: #fafafa;
     }
     .card-info {
       .title {
-        max-height: 3rem;
+        height: 3rem;
         overflow: hidden;
       }
       .current-price {

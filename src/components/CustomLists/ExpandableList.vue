@@ -24,7 +24,7 @@
 
             <ul class="c-group" :class="{'expand':scActive.includes(b.sCat)}">
               <div class="c-item item" v-for="(c, i) in b.cats" :key="i">
-                <p class="c-title">{{c}}</p>
+                <p class="c-title" @click="selectCat(c)">{{c}}</p>
               </div>
             </ul>
           </li>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import{mapActions,mapMutations,Store } from "vuex"
 export default {
   name: "expandable-list",
   props: ["allCategories"],
@@ -45,6 +46,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(["selectCatProduct"]),
     setMcActive(mc) {
       this.mcActive.indexOf(mc) === -1
         ? this.mcActive.push(mc)
@@ -54,7 +56,14 @@ export default {
       this.scActive.indexOf(sc) === -1
         ? this.scActive.push(sc)
         : this.scActive.splice(this.scActive.indexOf(sc), 1);
+    },
+    selectCat(catName){
+      console.log(catName)
+      this.$store.dispatch('Products/fetchSelectCat',catName)
+
+
     }
+
   }
 };
 </script>
