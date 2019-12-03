@@ -48,7 +48,7 @@
       "vue/no-unused-components": [
         "error",
         {
-          "ignoreWhenBindingPresent": true
+          "ignoreWhenBindingPresent": false
         }
       ]
     },

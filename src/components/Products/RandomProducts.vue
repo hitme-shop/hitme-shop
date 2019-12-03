@@ -1,6 +1,5 @@
 <template>
   <div class="random-products p-3 d-flex flex-wrap text-center">
-    <!-- daraz{{all}} -->
     <custom-card v-for="pro in pickaboo" :key="pro._id" :product="pro" class="mr-3 mb-3" />
   </div>
 </template>

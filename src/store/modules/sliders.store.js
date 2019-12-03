@@ -24,9 +24,9 @@ const initialState = () => ({
 const state = initialState()
 
 const getters = {
-   daraz: state => state.sliders.filter(s => s.website === "Daraz").map(a => a.src),
-   pickaboo: state => state.sliders.filter(s => s.website === "Pickaboo").map(a => a.src),
-   ajkerdeal: state => state.sliders.filter(s => s.website === "Ajkerdeal").map(a => a.src)
+   daraz: state => state.sliders.filter(s => s.website === "Daraz"),
+   pickaboo: state => state.sliders.filter(s => s.website === "Pickaboo"),
+   ajkerdeal: state => state.sliders.filter(s => s.website === "Ajkerdeal")
 }
 
 export default {

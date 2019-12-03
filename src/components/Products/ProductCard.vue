@@ -55,7 +55,6 @@ $light-white: #fafafa;
   color: #212121;
   .inner {
     background-color: white;
-    //border: 1px solid rgba(0, 0, 0, 0.137);
     .destination {
       text-decoration: none;
       color: #212121;
