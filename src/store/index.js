@@ -6,6 +6,7 @@ import createLogger from "vuex/dist/logger"
 import global from "./global"
 /** Modules */
 import modules from "./modules/_exporter"
+//import moduleName from 'module'
 
 Vue.use(Vuex)
 
