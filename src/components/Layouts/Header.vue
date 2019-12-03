@@ -11,7 +11,7 @@
        
        <div class=" search form-inline md-form mr-auto mb-4">
         <input class="form-control mr-sm-2" @keydown="suggest" v-model="title" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-elegant  btn-rounded btn-sm my-0"  @click="onSearch"> Search</button>          
+          <button class="btn btn-outline-success my-2 my-sm-0"  @click="onSearch"> Search</button>          
         </div>
 
       <!-- <i class="fal fa-user float-right"></i> -->

@@ -17,6 +17,15 @@ const actions = {
    },
    selectCatProduct:(state,setCat)=>{
       state.selectCat= setCat; 
+   },
+   cmpProducts: async ({commit},cmpProductsTitle)=>{
+      
+      const response2 = await api.get(`compare/${cmpProductsTitle}`) 
+      commit("setState",{cmpProducts:response2.data})
+      console.log(response2.data)
+   },
+   setCmpProductsTitle:(state,setCmpTitle)=>{
+      state.cmpProducts = setCmpTitle;
    }
 }
 
@@ -32,7 +41,8 @@ const mutations = {
 
 const initialState = () => ({
    randomProducts: [],
-   categoryProducts: []
+   categoryProducts: [],
+   cmpProducts:[]
 })
 const state = initialState()
 
@@ -43,6 +53,7 @@ const getters = {
    ajkerdeal: state => state.randomProducts.filter(a => a.website === "Ajkerdeal"),
   
    CatProducts: state=> state.categoryProducts,
+   setCmpProducts: state=>state.cmpProducts
    
 }
 
