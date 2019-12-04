@@ -24,6 +24,7 @@ const initialState = () => ({
 const state = initialState()
 
 const getters = {
+   sliders: state => state.sliders,
    daraz: state => state.sliders.filter(s => s.website === "Daraz"),
    pickaboo: state => state.sliders.filter(s => s.website === "Pickaboo"),
    ajkerdeal: state => state.sliders.filter(s => s.website === "Ajkerdeal")

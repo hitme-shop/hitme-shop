@@ -1,5 +1,6 @@
 <template>
   <div class="position-relative">
+    <website-info :website="sliders[current]&&sliders[current].website" />
     <div class="images">
       <a v-for="(image,index) in sliders" :key="image._id" :href="image.url" target="_blank">
         <img :class="{active:current==index}" :src="image.src" />
@@ -27,9 +28,14 @@
 </template>
 
 <script>
+/** Components */
+import WebsiteInfo from "@/components/Others/WebsiteInfo";
 export default {
   name: "custom-slider",
   props: ["sliders"],
+  components: {
+    "website-info": WebsiteInfo
+  },
   data: () => ({
     current: 0,
     isPaused: false,
@@ -39,10 +45,13 @@ export default {
     setInterval(!this.isPaused && this.next, this.interval);
   },
   methods: {
+    random(max, min) {
+      return Math.round(Math.random() * (max - min) + min);
+    },
     async next() {
       this.isPaused = true;
       this.current < this.sliders.length - 1
-        ? this.current++
+        ? (this.current = this.random(this.sliders.length - 1, 0))
         : (this.current = 0);
       await setTimeout(() => {
         this.isPaused = false;
@@ -50,7 +59,7 @@ export default {
     },
     async prev() {
       this.current > 0
-        ? this.current--
+        ? (this.current = this.random(this.sliders.length - 1, 0))
         : (this.current = this.sliders.length - 1);
       await setTimeout(() => {
         this.isPaused = false;

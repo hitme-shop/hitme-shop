@@ -1,24 +1,24 @@
 <template>
-   <div class="d-flex flex-wrap p-3">
-       <catproduct-card class="mr-2 mb-2" v-for=" product in CatProducts.data" :key='product._id' :product="product"/>
-      </div>  
-
+  <div class="overflow-auto d-flex flex-wrap p-3">
+    <products-row :website="'Daraz'" :products="categoryProducts&&categoryProducts.Daraz" />
+    <products-row :website="'Pickaboo'" :products="categoryProducts&&categoryProducts.Pickaboo" />
+    <products-row :website="'Ajkerdeal'" :products="categoryProducts&&categoryProducts.Ajkerdeal" />
+  </div>
 </template>
 
 <script>
- import ProductCard from "@/components/Products/ProductCard"
-import { mapMutations, mapGetters,mapState } from "vuex";
+//import ProductCard from "@/components/Products/ProductCard";
+import ProductsRow from "@/components/Products/ProductsRow";
+import { mapMutations, mapGetters, mapState } from "vuex";
 export default {
   name: "category",
-  components:{
-     "catproduct-card": ProductCard
-
+  components: {
+    //"catproduct-card": ProductCard,
+    "products-row": ProductsRow
   },
-  computed:{
-    ...mapGetters("Products",["CatProducts"])
-    
+  computed: {
+    ...mapGetters("Products", ["categoryProducts"])
   }
-
 };
 </script>
 

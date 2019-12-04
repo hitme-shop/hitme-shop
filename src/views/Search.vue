@@ -1,35 +1,23 @@
 <template>
-  <div class="search p-3">
-    <div class="d-flex flex-wrap ">
-       <product-card class="mr-2 mb-2" v-for=" product in allProducts.data" :key='product._id' :product="product"/>
-      </div>  
-   
-  
+  <div class="search p-3 overflow-auto">
+    <products-row :website="'Daraz'" :products="searchedProducts&&searchedProducts.Daraz" />
+    <products-row :website="'Pickaboo'" :products="searchedProducts&&searchedProducts.Pickaboo" />
+    <products-row :website="'Ajkerdeal'" :products="searchedProducts&&searchedProducts.Ajkerdeal" />
   </div>
 </template>
 
 <script>
-
-import { mapMutations, mapGetters,mapState } from "vuex";
-import ProductCard from "@/components/Products/ProductCard"
-
+import { mapMutations, mapGetters, mapState } from "vuex";
+//import ProductCard from "@/components/Products/ProductCard";
+import ProductsRow from "@/components/Products/ProductsRow";
 export default {
   name: "search",
-  components:{
-    "product-card": ProductCard
-
+  components: {
+    //"product-card": ProductCard,
+    "products-row": ProductsRow
   },
-  computed:{
-    //value: state=>state.name,
-    ...mapGetters(["allProducts"])
-  },
-
-
+  computed: {
+    ...mapGetters("Products", ["searchedProducts"])
+  }
 };
 </script>
-
-
-<style scoped>
-
-
-</style>

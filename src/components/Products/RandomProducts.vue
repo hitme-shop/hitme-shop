@@ -1,20 +1,22 @@
 <template>
-  <div class="random-products p-3 d-flex flex-wrap text-center">
-    <custom-card v-for="pro in pickaboo" :key="pro._id" :product="pro" class="mr-3 mb-3" />
+  <div class="random-products p-3 d-flex flex-wrap">
+    <products-row :website="'Daraz'" :products="random&&random.Daraz"/>
+    <products-row :website="'Pickaboo'" :products="random&&random.Pickaboo"/>
+    <products-row :website="'Ajkerdeal'" :products="random&&random.Ajkerdeal"/>
   </div>
 </template>
 
 <script>
 /** Components */
-import Card from "../Products/ProductCard";
+import Row from "../Products/ProductsRow";
 import { mapGetters } from "vuex";
 export default {
   name: "random-products",
   components: {
-    "custom-card": Card
+    "products-row": Row
   },
   computed: {
-    ...mapGetters("Products", ["daraz", "all", "pickaboo", "ajkerdeal"])
+    ...mapGetters("Products", ["random"])
   }
 };
 </script>

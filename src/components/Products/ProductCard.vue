@@ -3,10 +3,7 @@
     <div class="inner shadow-def rounded">
       <a class="destination" :href="product.url" target="_blank">
         <div class="card-top rounded overflow-hidden">
-          <div class="website-info d-flex shadow-def rounded-pill px-2 py-1">
-            <img class="logo rounded-circle shadow-def-sm" src="../../assets/images/daraz-logo.png" />
-            <p class="small mb-0 ml-1">{{product.website}}</p>
-          </div>
+          <website-info :website="product.website" />
           <div v-if="product.discount>0" class="discount px-2 text-white">
             <span>{{product.discount}}</span>
             <span>%</span>
@@ -38,12 +35,13 @@
 </template>
 
 <script>
+import WebsiteInfo from "@/components/Others/WebsiteInfo";
 export default {
   name: "c-card",
   props: ["product"],
-  data: () => ({
-    src: "https://static-01.daraz.com.bd/p/912024ea370796f7d6c66a0e91266e42.jpg"
-  })
+  components: {
+    "website-info": WebsiteInfo
+  }
 };
 </script>
 
@@ -62,17 +60,17 @@ $light-white: #fafafa;
     .card-top {
       height: 12.7rem;
       position: relative;
-      .website-info {
-        background-color: white;
-        width: max-content;
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        .logo {
-          height: 1.2rem;
-          width: 1.2rem;
-        }
-      }
+      // .website-info {
+      //   background-color: white;
+      //   width: max-content;
+      //   position: absolute;
+      //   top: 0.5rem;
+      //   left: 0.5rem;
+      //   .logo {
+      //     height: 1.2rem;
+      //     width: 1.2rem;
+      //   }
+      // }
       .discount {
         background-color: #ff5722;
         border-top-left-radius: 2rem;

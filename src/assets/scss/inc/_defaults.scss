@@ -43,3 +43,34 @@ i {
 .shadow-def{box-shadow: 0 0 5px rgba(0,0,0,0.1), 0 3px 4px rgba(0,0,0,0.2)}
 .shadow-def-md{box-shadow: 0 0 4px rgba(0,0,0,0.075), 0 2px 3px rgba(0,0,0,0.15)}
 .shadow-def-sm{box-shadow: 0 0 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1)}
+.shadow-def-lg{box-shadow: 0 0 5px rgba(0,0,0,0.15), 0 3px 4px rgba(0,0,0,0.3)}
+
+%bg-gradient{
+   background: rgb(26, 116, 194);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(26, 116, 194, 1) 0%,
+      rgba(51, 152, 241, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(26, 116, 194, 1) 0%,
+      rgba(51, 152, 241, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(26, 116, 194, 1) 0%,
+      rgba(51, 152, 241, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a74c2",endColorstr="#3398f1",GradientType=1);
+}
+
+.bg-gradient{
+   @extend %bg-gradient
+}
+li.router-link-exact-active{
+   @extend %bg-gradient
+}
+.search-form .suggestions p.active{
+   @extend %bg-gradient
+}

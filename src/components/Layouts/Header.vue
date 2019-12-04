@@ -1,22 +1,13 @@
 <template>
-  <header class="shadow-def-sm py-2 px-4">
-    <div @click="toggleSidebar" class="custom-toggler d-inline-block">
+  <header class="d-flex shadow-def-sm py-2 px-4">
+    <div @click="toggleSidebar" class="custom-toggler mt-2">
       <sidebar-toggler class="c-toggler" />
     </div>
-    <div class="app-info d-inline-block ml-4 pt-2">
+    <div class="app-info ml-4 pt-1">
       <h3 class="app-name">Hitme Shop</h3>
-<<<<<<< HEAD
     </div>
 
-    <search-form class="d-inline-block" />
-=======
-     </div> 
-       
-       <div class=" search form-inline md-form mr-auto mb-4">
-        <input class="form-control mr-sm-2" @keydown="suggest" v-model="title" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0"  @click="onSearch"> Search</button>          
-        </div>
->>>>>>> e42084ff785f7e63647474b83b56b8db2f3866dd
+    <search-form class="mx-10" />
 
     <div class="account fa-lg pt-3 mr-4">
       <i class="fal fa-user"></i>
@@ -51,10 +42,6 @@ export default {
       this.sidebar === "collapsed"
         ? this.setState({ sidebar: "expanded" })
         : this.setState({ sidebar: "collapsed" });
-<<<<<<< HEAD
-=======
-        
->>>>>>> e42084ff785f7e63647474b83b56b8db2f3866dd
     },
     onSearch() {
       this.$store.dispatch("fetchData", this.title);
@@ -85,6 +72,10 @@ header {
     position: absolute;
     top: 0.5rem;
     right: 1rem;
+  }
+  .mx-10 {
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 </style>

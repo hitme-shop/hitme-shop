@@ -48,7 +48,6 @@ export default {
         transition: 0.3s ease-in-out;
       }
       li.router-link-exact-active {
-        background-color: #2196f3;
         color: white;
       }
       li:hover {

@@ -1,6 +1,6 @@
 <template>
   <div class="sliders-container p-2">
-    <custom-image-slider :sliders="daraz" />
+    <custom-image-slider :sliders="sliders" />
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     "custom-image-slider": CustomImageSlider
   },
   computed: {
-    ...mapGetters("Sliders", ["daraz", "darazSliders", "pickaboo", "ajkerdeal"])
+    ...mapGetters("Sliders", ["sliders"])
   }
 };
 </script>
