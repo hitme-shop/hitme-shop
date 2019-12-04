@@ -4,6 +4,7 @@ import api from "../../helpers/axios"
 const actions = {
    fetchProducts: async ({ commit }) => {
       let { data } = await api.get("products")
+      console.log(data);
       !data.error && commit("setState", { randomProducts: data.data })
    }
 }

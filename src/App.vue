@@ -4,7 +4,6 @@
     <div class="custom-grid">
       <custom-sidebar />
       <router-view />
-      <router-link to="/search">Search</router-link>
     </div>
   </div>
 </template>

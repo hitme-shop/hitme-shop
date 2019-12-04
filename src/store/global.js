@@ -1,9 +1,9 @@
 
 const actions = {
-   init: ({ dispatch ,state}) => {
+   init: ({ dispatch }) => {
       dispatch("Categories/fetchCategories")
       dispatch("Sliders/fetchSliders")
-      //dispatch("Products/fetchProducts")
+      dispatch("Products/fetchProducts")
    }
 }
 
