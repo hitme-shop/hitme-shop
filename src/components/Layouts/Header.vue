@@ -5,9 +5,18 @@
     </div>
     <div class="app-info d-inline-block ml-4 pt-2">
       <h3 class="app-name">Hitme Shop</h3>
+<<<<<<< HEAD
     </div>
 
     <search-form class="d-inline-block" />
+=======
+     </div> 
+       
+       <div class=" search form-inline md-form mr-auto mb-4">
+        <input class="form-control mr-sm-2" @keydown="suggest" v-model="title" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0"  @click="onSearch"> Search</button>          
+        </div>
+>>>>>>> e42084ff785f7e63647474b83b56b8db2f3866dd
 
     <div class="account fa-lg pt-3 mr-4">
       <i class="fal fa-user"></i>
@@ -42,6 +51,10 @@ export default {
       this.sidebar === "collapsed"
         ? this.setState({ sidebar: "expanded" })
         : this.setState({ sidebar: "collapsed" });
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e42084ff785f7e63647474b83b56b8db2f3866dd
     },
     onSearch() {
       this.$store.dispatch("fetchData", this.title);

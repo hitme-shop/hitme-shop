@@ -4,6 +4,10 @@
     <div class="custom-grid">
       <custom-sidebar />
       <router-view />
+<<<<<<< HEAD
+=======
+      <!-- <router-link to="/search">Search</router-link> -->
+>>>>>>> e42084ff785f7e63647474b83b56b8db2f3866dd
     </div>
   </div>
 </template>
@@ -19,6 +23,8 @@ export default {
     "custom-sidebar": Sidebar,
     "custom-header": Header,
     //"custom-search": Search
+  },computed:{
+
   },
   created() {
     this.$store.dispatch("init");
